@@ -33,7 +33,7 @@ $(document).ready(function () {
     var jewel4 = 0;  
 
     function playerScore(){
-
+        if (jewel1)
         console.log(jewel1 + jewel2 + jewel3 + jewel4); 
     }
 
