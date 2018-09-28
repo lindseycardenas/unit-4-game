@@ -11,6 +11,10 @@
   clear: both;
   display: table;
 } */ 
+.jewels{
+     width: 300px;
+     height: 300px;
+}
 
 .row {
   display: flex;

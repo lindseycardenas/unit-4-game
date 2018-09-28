@@ -1,44 +1,120 @@
 $(document).ready(function () {
 
-    //make a function that generates a number between 19 and 120
-    function randomNumber(min, max) {
-        return Math.floor(Math.random() * (max - min + 1) + min);
-    };
+    var targetNumber = Math.floor(Math.random() * (120 - 19 + 1) + 19);
 
-    $("#randomNumber").text(randomNumber(19, 120));
+    var counter = 0;
 
+    var win = 0; 
+    var lose = 0; 
+  
+    $("#number-to-guess").text(targetNumber);
+    $("#wins").text(win); 
+    $("#losses").text(lose); 
 
-    //make jewels clickable and generate number 1-12
 
     $("#j1").on("click", function () {
-        console.log(randomNumber(1, 12));
-    })
+        var jewel1 = Math.floor(Math.random() * 12) + 1;
+         counter += jewel1; 
+         $("#playerScore").text(counter);
+
+         if (counter === targetNumber){
+             alert("You win!");
+             win++;
+         }
+         else if (counter > targetNumber){
+             alert("You went over! You lose!");
+             lose++;
+         }
+    });
 
     $("#j2").on("click", function () {
-        console.log(randomNumber(1, 12));
-    })
+        var jewel2 = Math.floor(Math.random() * 12) + 1;
+        counter += jewel2; 
+        $("#playerScore").text(counter);
+        if (counter === targetNumber) {
+            alert("You win!");
+            win++;
+        }
+        else if (counter > targetNumber){
+            alert("You went over! You lose!");
+            lose++;
+        }
+    });
 
     $("#j3").on("click", function () {
-        console.log(randomNumber(1, 12));
-    })
+        var jewel3 = Math.floor(Math.random() * 12) + 1;
+        counter += jewel3; 
+        $("#playerScore").text(counter);
+        if (counter === targetNumber) {
+            alert("You win!");
+            win++
+        }
+        else if (counter > targetNumber){
+            alert("You went over! You lose!");
+            lose++;
+        }
+    });
 
     $("#j4").on("click", function () {
-        console.log(randomNumber(1, 12));
-    })
+        var jewel4 = Math.floor(Math.random() * 12) + 1;
+        counter += jewel4; 
+        $("#playerScore").text(counter);
+        if (counter === targetNumber) {
+            alert("You win!");
+            win++; 
+        }
+        else if(counter > targetNumber){
+            alert("You went over! You lose!");
+            lose++;
+        }
+    });
 
-    //add jewels to players score
-    var jewel1 = 0;
-    var jewel2 = 0; 
-    var jewel3 = 0; 
-    var jewel4 = 0;  
 
-    function playerScore(){
-        if (jewel1)
-        console.log(jewel1 + jewel2 + jewel3 + jewel4); 
-    }
 
-    //wins counter
+    // wins counter
 
-    //losses counter
+    // losses counter
 
+
+
+// var imageJewel = $("<img>");
+
+// var numberOptions = [1,2,3,4,5,6,7,8,9,10,11,12];
+
+// // Next we create a for loop to create crystals for every numberOption.
+// for (var i = 0; i < numberOptions.length; i++) {
+
+
+
+
+//     imageJewel.attr("data-jewelvalue", numberOptions[i]);
+
+    
+//     $("#j1").append(imageJewel);
+//     $("#j2").append(imageJewel); 
+//     $("#j3").append(imageJewel);
+//     $("#j4").append(imageJewel);
+// }
+
+// $("#jewels").on("click", function () {
+
+    
+
+//     var jewelValue = ($(this).attr("data-jewelvalue"));
+//     jewelValue = parseInt(jewelValue);
+
+//     counter += jewelValue;
+
+
+//     alert("New score: " + counter);
+
+//     if (counter === targetNumber) {
+//         alert("You win!");
+//     }
+
+//     else if (counter >= targetNumber) {
+//         alert("You lose!!");
+//     }
+
+// });
 });
